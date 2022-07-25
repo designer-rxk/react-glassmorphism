@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+.blurred-wrapper{
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1563089145-599997674d42?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTUxOTkyNzM&ixlib=rb-1.2.1&q=80") center/cover;
+    position:relative;
+    z-index: 1;
+    overflow: hidden;
+    animation: hue 10s infinite alternate;
+
+}
+.blurred-wrapper::after{
+    content: "";
+    width:100%;
+    height:100%;
+    background: inherit;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    filter: blur(2rem);
+    transform: scale(1.15);
+}
+@keyframes hue {
+    from{
+        filter: hue-rotate(0);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+.main-header{
+    height: 12rem;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.logo{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size:2.5rem;
+    font-weight: bold;
+}
+.btn{
+    padding: 1rem 2.5rem;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius:2.5rem;
+    color:#ffffff;
+}
+.btn:hover{
+    background: white;
+    color:black;
+}
+.hero{
+    display:flex;
+    align-items: center;
+    height: calc(100vh - 12rem);
+}
+.content-wrapper{
+    max-width: 40rem;
+    transform: translateY(-4rem);
+
+}
+.tagline{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+.message{
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+}
+.cta{
+    background-color: #000;
+}
+.cta:hover{
+    background: white;
+    color:black;
+}
+@media screen and (min-width: 768px){
+    .btn{
+        padding: 1.5rem 3rem;
+    }
+    .content-wrapper{
+        max-width: 60rem;
+    }
+    .tagline{
+        font-size: 1.6rem;
+    }
+    .title{
+        font-size: 6rem;
+    }
+    .message{
+        font-size: 2rem;
+    }
+}
